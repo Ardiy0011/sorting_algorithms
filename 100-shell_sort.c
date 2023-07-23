@@ -2,28 +2,6 @@
 #include "sorting_validation.c"
 #include "swap.c"
 
-
-/**
- * print_array - Prints an array of integers
- *
- * @array: The array to be printed
- * @size: Number of elements in @array
- */
-void print_array(const int *array, size_t size)
-{
-	size_t i;
-
-	i = 0;
-	while (array && i < size)
-	{
-	if (i > 0)
-		printf(", ");
-	printf("%d", array[i]);
-	++i;
-	}
-	printf("\n");
-}
-
 /**
  * knuth_sequence - implemetation of the knuth sequec
  * @size: Number of elements in @array
@@ -49,17 +27,17 @@ void shell_sort(int *array, size_t size)
 {
 	size_t gap_value = knuth_sequence(size);
 	size_t i, j;
-	int temp = array[i];
-	j = i;
-	i = gap_value;
 
 	sorting_validation(array, size);
 
 	while (gap_value > 0)
 	{
 
+	i = gap_value;
 	while (i < size)
 	{
+		int temp = array[i];
+		j = i;
 
 		while (j >= gap_value && array[j - gap_value] > temp)
 		{
