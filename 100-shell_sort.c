@@ -49,17 +49,18 @@ void shell_sort(int *array, size_t size)
 {
 	size_t gap_value = knuth_sequence(size);
 	size_t i, j;
+	int temp = array[i];
+	j = i;
+	i = gap_value;
 
 	sorting_validation(array, size);
 
 	while (gap_value > 0)
 	{
 
-	i = gap_value;
 	while (i < size)
 	{
-		int temp = array[i];
-		j = i;
+
 		while (j >= gap_value && array[j - gap_value] > temp)
 		{
 		swap(&array[j], &array[j - gap_value]);
