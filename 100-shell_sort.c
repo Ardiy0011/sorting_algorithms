@@ -5,6 +5,7 @@
 /**
  * knuth_sequence - implemetation of the knuth sequec
  * @size: Number of elements in @array
+ * return: knuth sequence equation
  */
 size_t knuth_sequence(size_t size)
 {
@@ -37,8 +38,8 @@ void shell_sort(int *array, size_t size)
 	while (i < size)
 	{
 		int temp = array[i];
-		j = i;
 
+		j = i;
 		while (j >= gap_value && array[j - gap_value] > temp)
 		{
 		swap(&array[j], &array[j - gap_value]);
