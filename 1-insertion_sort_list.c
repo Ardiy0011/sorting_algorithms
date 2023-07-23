@@ -6,39 +6,39 @@
  */
 void insertion_sort_list(listint_t **list)
 {
- listint_t *ptr, *tmp;
+	listint_t *ptr, *tmp;
 
- if (!list)
-  return;
+	if (!list)
+	return;
 
- ptr = *list;
+	ptr = *list;
 
- while (ptr)
- {
-  while (ptr->next && (ptr->n > ptr->next->n))
-  {
-   tmp = ptr->next;
-   ptr->next = tmp->next;
-   tmp->prev = ptr->prev;
+	while (ptr)
+	{
+	while (ptr->next && (ptr->n > ptr->next->n))
+	{
+	tmp = ptr->next;
+	ptr->next = tmp->next;
+	tmp->prev = ptr->prev;
 
-   if (ptr->prev)
-    ptr->prev->next = tmp;
+	if (ptr->prev)
+	ptr->prev->next = tmp;
 
-   if (tmp->next)
-    tmp->next->prev = ptr;
+	if (tmp->next)
+	tmp->next->prev = ptr;
 
-   ptr->prev = tmp;
-   tmp->next = ptr;
+	ptr->prev = tmp;
+	tmp->next = ptr;
 
-   if (tmp->prev)
-    ptr = tmp->prev;
-   else
-    *list = tmp;
+	if (tmp->prev)
+	ptr = tmp->prev;
+	else
+	*list = tmp;
 
-   print_list(*list);
-  }
-  ptr = ptr->next;
- }
+	print_list(*list);
+	}
+	ptr = ptr->next;
+	}
 }
 
 
@@ -48,13 +48,13 @@ void insertion_sort_list(listint_t **list)
  */
 void freeing(listint_t *list) 
 {
-    listint_t *tmp;
-    while (list != NULL)
-    {
-        tmp = list;
-        list = list->next;
-        free(tmp);
-    }
+	listint_t *tmp;
+	while (list != NULL)
+	{
+	tmp = list;
+	list = list->next;
+	free(tmp);
+	}
 }
 
 
@@ -68,23 +68,23 @@ void freeing(listint_t *list)
  */
 listint_t *create_listint(const int *array, size_t size)
 {
-    listint_t *list;
-    listint_t *node;
-    int *tmp;
+	listint_t *list;
+	listint_t *node;
+	int *tmp;
 
-    list = NULL;
-    while (size--)
-    {
-        node = malloc(sizeof(*node));
-        if (!node)
-            return (NULL);
-        tmp = (int *)&node->n;
-        *tmp = array[size];
-        node->next = list;
-        node->prev = NULL;
-        list = node;
-        if (list->next)
-            list->next->prev = list;
-    }
-    return (list);
+	list = NULL;
+	while (size--)
+	{
+		node = malloc(sizeof(*node));
+		if (!node)
+		return (NULL);
+		tmp = (int *)&node->n;
+		*tmp = array[size];
+		node->next = list;
+		node->prev = NULL;
+		list = node;
+		if (list->next)
+		list->next->prev = list;
+	}
+	return (list);
 }
