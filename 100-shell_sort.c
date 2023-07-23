@@ -5,7 +5,7 @@
 /**
  * knuth_sequence - implemetation of the knuth sequec
  * @size: Number of elements in @array
- * return: knuth sequence equation
+ * Return: The calculated gap value using the Knuth sequence.
  */
 size_t knuth_sequence(size_t size)
 {
