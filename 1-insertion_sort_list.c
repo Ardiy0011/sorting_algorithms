@@ -46,9 +46,10 @@ void insertion_sort_list(listint_t **list)
  * freeing - frees temporary pointer created
  * @list: pointer to the pointer to struct
  */
-void freeing(listint_t *list) 
+void freeing(listint_t *list)
 {
 	listint_t *tmp;
+
 	while (list != NULL)
 	{
 	tmp = list;
