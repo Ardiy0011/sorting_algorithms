@@ -11,28 +11,28 @@
  */
 size_t lomuto_partition(int *array, ssize_t low, ssize_t high, size_t size)
 {
-    int pivot = array[high];
-    ssize_t i = low - 1, j;
+	int pivot = array[high];
+	ssize_t i = low - 1, j;
 
-    for (j = low; j < high; j++)
-    {
-        if (array[j] <= pivot)
-        {
-            i++;
-            if (i != j)
-            {
-                swap(&array[i], &array[j]);
-            }
-        }
-    }
+	for (j = low; j < high; j++)
+	{
+		if (array[j] <= pivot)
+		{
+		i++;
+		if (i != j)
+		{
+			swap(&array[i], &array[j]);
+		}
+		}
+	}
 
-    if (i + 1 != high)
-    {
-        swap(&array[i + 1], &array[high]);
-        print_array(array, size);
-    }
+	if (i + 1 != high)
+	{
+		swap(&array[i + 1], &array[high]);
+		print_array(array, size);
+	}
 
-    return (i + 1);
+	return (i + 1);
 }
 
 /**
@@ -44,13 +44,13 @@ size_t lomuto_partition(int *array, ssize_t low, ssize_t high, size_t size)
  */
 void quick_sort_helper(int *array, ssize_t low, ssize_t high, size_t size)
 {
-    if (low < high)
-    {
-        size_t pivot_idx = lomuto_partition(array, low, high, size);
+	if (low < high)
+	{
+	size_t pivot_idx = lomuto_partition(array, low, high, size);
 
-        quick_sort_helper(array, low, pivot_idx - 1, size);
-        quick_sort_helper(array, pivot_idx + 1, high, size);
-    }
+	quick_sort_helper(array, low, pivot_idx - 1, size);
+	quick_sort_helper(array, pivot_idx + 1, high, size);
+	}
 }
 
 /**
@@ -61,8 +61,8 @@ void quick_sort_helper(int *array, ssize_t low, ssize_t high, size_t size)
  */
 void quick_sort(int *array, size_t size)
 {
-    if (array == NULL || size < 2)
-        return;
+	if (array == NULL || size < 2)
+	return;
 
-    quick_sort_helper(array, 0, size - 1, size);
+	quick_sort_helper(array, 0, size - 1, size);
 }
