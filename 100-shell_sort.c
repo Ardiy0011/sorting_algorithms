@@ -31,11 +31,12 @@ void print_array(const int *array, size_t size)
 size_t knuth_sequence(size_t size)
 {
 	size_t gap_value = 1;
+
 	while (gap_value < size)
 	{
 	gap_value = (gap_value * 3) + 1;
 	}
-	return (gap_value - 1) / 3;
+	return ((gap_value - 1) / 3);
 }
 
 /**
@@ -48,6 +49,7 @@ void shell_sort(int *array, size_t size)
 {
 	size_t gap_value = knuth_sequence(size);
 	size_t i, j;
+
 	sorting_validation(array, size);
 
 	while (gap_value > 0)
