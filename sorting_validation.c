@@ -10,12 +10,6 @@ void sorting_validation(int *array, size_t size)
 {
         size_t i;
 
-        if (!array || size == 0)
-        {
-        printf("Array is empty or invalid.\n");
-        return;
-        }
-
         for (i = 0; i < size - 1; i++)
         {
         if (array[i] > array[i + 1])
