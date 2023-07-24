@@ -4,10 +4,18 @@ void sorting_validation(int *array, size_t size)
 {
     size_t i;
 
-    if (size == 0)
+    for (i = 0; i < size - 1; i++)
     {
-        printf("empty array.\n");
-        return;
+        if (array[i] > array[i + 1])
+        {
+            break;
+        }
     }
 
+    if (i == size - 1)
+    {
+        
+        printf("Array already sorted: O(n)\n");
+        return;
+    }
 }
