@@ -2,20 +2,6 @@
 #include "swap.c"
 
 /**
- * sorting_validation - checks if list is sorted
- * algorithm
- * @array: The array to be printed
- * @size: Number of elements in @array
- */
-int sorting_validation(int *array, size_t size)
-{
-
-        if (!array || size < 2)
-        return -1;
-
-}
-
-/**
  * bubble_sort - function that implements the bubble sort
  * algorithm
  * @array: The array to be printed
@@ -25,7 +11,8 @@ void bubble_sort(int *array, size_t size)
 {
 	size_t i, j;
 
-	sorting_validation(array, size);
+        if (!array || size <= 1)
+        return;
 
 	for (i = 0; i < size - 1; i++)
 	{
