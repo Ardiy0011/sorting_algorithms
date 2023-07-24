@@ -17,6 +17,4 @@ void sorting_validation(int *array, size_t size)
 		return;
 	}
 	}
-
-	printf("Array is sorted.\n");
 }
