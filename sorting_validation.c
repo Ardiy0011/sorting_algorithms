@@ -12,10 +12,4 @@ void sorting_validation(int *array, size_t size)
         }
     }
 
-    if (i == size - 1)
-    {
-        
-        printf("Array already sorted: O(n)\n");
-        return;
-    }
 }
