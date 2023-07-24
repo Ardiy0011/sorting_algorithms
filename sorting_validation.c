@@ -17,5 +17,11 @@ void sorting_validation(int *array, size_t size)
 		printf("Array is sorted.\n");
 		return;
 	}
+	else if (sizeof(array) == 0)
+	{
+		printf("Array is empty.\n");
 	}
+	}
+
+	
 }
