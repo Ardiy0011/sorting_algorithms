@@ -17,10 +17,8 @@ void sorting_validation(int *array, size_t size)
 	{
 	if (array[i] > array[i + 1])
 	{
-		printf("Array is sorted.\n");
 		return;
 	}
 	}
 
-	
 }
