@@ -1,6 +1,5 @@
 #include "sort.h"
 #include "swap.c"
-#include "sorting_validation.c"
 
 /**
  * bubble_sort - function that implements the bubble sort
@@ -12,7 +11,9 @@ void bubble_sort(int *array, size_t size)
 {
 	size_t i, j;
 
-	sorting_validation(array, size);
+	if (!array || size < 2)
+        printf("empty array");
+        return;
 
 	for (i = 0; i < size - 1; i++)
 	{

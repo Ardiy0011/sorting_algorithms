@@ -10,6 +10,7 @@ void sorting_validation(int *array, size_t size)
 {
 
         if (!array || size < 2)
+        printf("empty array");
         return;
 
 }
