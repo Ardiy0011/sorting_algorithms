@@ -1,5 +1,4 @@
 #include "sort.h"
-#include "sorting_validation.c"
 #include "swap.c"
 
 /**
@@ -12,7 +11,8 @@ void selection_sort(int *array, size_t size)
 {
 	size_t i, j, smallest_idx;
 
-	sorting_validation(array, size);
+	if (!array || size <= 1)
+    return;
 
 	for (i = 0; i < size - 1; i++)
 	{
