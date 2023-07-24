@@ -1,6 +1,5 @@
 #include "sort.h"
 #include "swap.c"
-
 /**
  * bubble_sort - function that implements the bubble sort
  * algorithm
@@ -9,10 +8,11 @@
  */
 void bubble_sort(int *array, size_t size)
 {
-	size_t i, j;
 
 	if (!array || size < 2)
 	return;
+
+	size_t i, j;
 
 	for (i = 0; i < size; i++)
 	{
