@@ -1,6 +1,19 @@
 #include "sort.h"
 #include "swap.c"
-#include "sorting_validation.c"
+
+/**
+ * sorting_validation - checks if list is sorted
+ * algorithm
+ * @array: The array to be printed
+ * @size: Number of elements in @array
+ */
+void sorting_validation(int *array, size_t size)
+{
+
+        if (!array || size < 2)
+        return;
+
+}
 
 /**
  * bubble_sort - function that implements the bubble sort
