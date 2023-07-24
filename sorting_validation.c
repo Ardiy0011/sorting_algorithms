@@ -8,20 +8,21 @@
  */
 void sorting_validation(int *array, size_t size)
 {
-	size_t i;
+        size_t i;
 
-	for (i = 0; i < size - 1; i++)
-	{
-	if (array[i] > array[i + 1])
-	{
-		printf("Array is sorted.\n");
-		return;
-	}
-	else if (sizeof(array) == 0)
-	{
-		printf("Array is empty.\n");
-	}
-	}
+        if (!array || size == 0)
+        {
+        printf("Array is empty or invalid.\n");
+        return;
+        }
 
-	
+        for (i = 0; i < size - 1; i++)
+        {
+        if (array[i] > array[i + 1])
+        {
+                printf("Array is sorted.\n");
+                return;
+        }
+        }
+
 }
