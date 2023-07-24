@@ -29,7 +29,9 @@ void shell_sort(int *array, size_t size)
 	size_t gap_value = knuth_sequence(size);
 	size_t i, j;
 
-	sorting_validation(array, size);
+	if (array == NULL || size <= 1)
+    return;
+
 
 	while (gap_value > 0)
 	{
