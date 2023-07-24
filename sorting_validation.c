@@ -10,13 +10,6 @@ void sorting_validation(int *array, size_t size)
         return;
     }
 
-    for (i = 0; i < size - 1; i++)
-    {
-        if (array[i] > array[i + 1])
-        {
-            break;
-        }
-    }
 
     if (i == size - 1)
     {
