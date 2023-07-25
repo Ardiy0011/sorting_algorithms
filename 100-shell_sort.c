@@ -50,6 +50,6 @@ void shell_sort(int *array, size_t size)
 		i++;
 	}
 	gap_value = (gap_value - 1) / 3;
-	print_array(array, size);
+
 	}
 }

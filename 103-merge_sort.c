@@ -15,41 +15,46 @@ void merge(int *array, int *left, size_t lz, int *right, size_t rz)
 
 	if (temp == NULL)
 	{
-	printf("Memory allocation error!\n");
-	return;
+		printf("Memory allocation error!\n");
+		return;
 	}
+
 	while (k < lz + rz)
 	{
-	switch ((i < lz) * 2 + (j < rz))
-	{
-		case 3:
-		if (left[i] <= right[j])
+		switch ((i < lz) * 2 + (j < rz))
 		{
+		case 3:
+			if (left[i] <= right[j])
+			{
+				temp[k] = left[i];
+				i++;
+			}
+			else
+			{
+				temp[k] = right[j];
+				j++;
+			}
+			break;
+		case 2:
 			temp[k] = left[i];
 			i++;
-		}
-		else
-		{
+			break;
+		case 1:
 			temp[k] = right[j];
 			j++;
+			break;
 		}
-		break;
-		case 2:
-		temp[k] = left[i];
-		i++;
-		break;
-		case 1:
-		temp[k] = right[j];
-		j++;
-		break;
+		k++;
 	}
-	k++;
-	}
+
 	for (i = 0; i < lz + rz; i++)
 	{
-	array[i] = temp[i];
+		array[i] = temp[i];
 	}
+
 	free(temp);
+
+	print_array(array, lz + rz);
 }
 
 /**
@@ -61,18 +66,16 @@ void merge_sort(int *array, size_t size)
 {
 	if (size > 1)
 	{
-	size_t mid = size / 2;
-	size_t lz = mid;
-	size_t rz = size - mid;
+		size_t mid = size / 2;
+		size_t lz = mid;
+		size_t rz = size - mid;
 
-	int *left = array;
-	int *right = array + mid;
+		int *left = array;
+		int *right = array + mid;
 
-	merge_sort(left, lz);
-	merge_sort(right, rz);
+		merge_sort(left, lz);
+		merge_sort(right, rz);
 
-	merge(array, left, lz, right, rz);
-
-	print_array(array, size);
+		merge(array, left, lz, right, rz);
 	}
 }
