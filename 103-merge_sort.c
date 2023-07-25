@@ -18,7 +18,6 @@ void merge(int *array, int *left, size_t lz, int *right, size_t rz)
 	printf("Memory allocation error!\n");
 	return;
 	}
-
 	while (k < lz + rz)
 	{
 	switch ((i < lz) * 2 + (j < rz))
@@ -35,12 +34,10 @@ void merge(int *array, int *left, size_t lz, int *right, size_t rz)
 			j++;
 		}
 		break;
-
 		case 2:
 		temp[k] = left[i];
 		i++;
 		break;
-
 		case 1:
 		temp[k] = right[j];
 		j++;
@@ -48,12 +45,10 @@ void merge(int *array, int *left, size_t lz, int *right, size_t rz)
 	}
 	k++;
 	}
-
 	for (i = 0; i < lz + rz; i++)
 	{
 	array[i] = temp[i];
 	}
-
 	free(temp);
 }
 
