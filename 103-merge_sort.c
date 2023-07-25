@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "sort.h"
 
 /**
  * merge - Merge two sorted subarrays into a single sorted array.
@@ -78,5 +77,7 @@ void merge_sort(int *array, size_t size)
         merge_sort(right, right_size);
 
         merge(array, left, left_size, right, right_size);
+
+        print_array(array, size);
     }
 }
