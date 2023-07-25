@@ -4,14 +4,14 @@
  * merge - Merge two sorted subarrays into a single sorted array.
  * @array: The input array.
  * @left: Pointer to the left subarray.
- * @left_size: Size of the left subarray.
+ * @lz: Size of the left subarray.
  * @right: Pointer to the right subarray.
- * @right_size: Size of the right subarray.
+ * @rz: Size of the right subarray.
  */
-void merge(int *array, int *left, size_t left_size, int *right, size_t right_size)
+void merge(int *array, int *left, size_t lz, int *right, size_t rz)
 {
 	size_t i = 0, j = 0, k = 0;
-	int *temp = (int *)malloc((left_size + right_size) * sizeof(int));
+	int *temp = (int *)malloc((lz + rz) * sizeof(int));
 
 	if (temp == NULL)
 	{
@@ -19,9 +19,9 @@ void merge(int *array, int *left, size_t left_size, int *right, size_t right_siz
 	return;
 	}
 
-	while (k < left_size + right_size)
+	while (k < lz + rz)
 	{
-	switch ((i < left_size) * 2 + (j < right_size))
+	switch ((i < lz) * 2 + (j < rz))
 	{
 		case 3:
 		if (left[i] <= right[j])
@@ -49,7 +49,7 @@ void merge(int *array, int *left, size_t left_size, int *right, size_t right_siz
 	k++;
 	}
 
-	for (i = 0; i < left_size + right_size; i++)
+	for (i = 0; i < lz + rz; i++)
 	{
 	array[i] = temp[i];
 	}
@@ -64,20 +64,20 @@ void merge(int *array, int *left, size_t left_size, int *right, size_t right_siz
  */
 void merge_sort(int *array, size_t size)
 {
-    if (size > 1)
-    {
-        size_t mid = size / 2;
-        size_t left_size = mid;
-        size_t right_size = size - mid;
+	if (size > 1)
+	{
+	size_t mid = size / 2;
+	size_t lz = mid;
+	size_t rz = size - mid;
 
-        int *left = array;
-        int *right = array + mid;
+	int *left = array;
+	int *right = array + mid;
 
-        merge_sort(left, left_size);
-        merge_sort(right, right_size);
+	merge_sort(left, lz);
+	merge_sort(right, rz);
 
-        merge(array, left, left_size, right, right_size);
+	merge(array, left, lz, right, rz);
 
-        print_array(array, size);
-    }
+	print_array(array, size);
+	}
 }
