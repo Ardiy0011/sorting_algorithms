@@ -22,7 +22,7 @@ void selection_sort(int *array, size_t size)
 		{
 			if (array[j] < array[smallest_idx])
 			{
-				smallest_idx = j;
+				array[smallest_idx] = array[j];
 			}
 		}
 
