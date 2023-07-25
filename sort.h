@@ -31,5 +31,7 @@ void quick_sort_recursion(int *array, ssize_t before, ssize_t after, size_t size
 size_t lomuto_partition(int *array, ssize_t before, ssize_t after, size_t size);
 void shell_sort(int *array, size_t size);
 size_t knuth_sequence_formula(size_t size);
+void merge_sort(int *array, size_t size);
+void merge(int *array, int *left, size_t left_size, int *right, size_t right_size);
 
 #endif /*SORT_H*/
