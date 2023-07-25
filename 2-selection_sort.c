@@ -22,7 +22,7 @@ void selection_sort(int *array, size_t size)
 		{
 			if (array[j] < array[smallest_idx])
 			{
-				array[smallest_idx] = array[j];
+				smallest_idx = j;
 			}
 		}
 
@@ -33,4 +33,3 @@ void selection_sort(int *array, size_t size)
 		}
 	}
 }
-
