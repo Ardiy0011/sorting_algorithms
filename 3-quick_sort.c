@@ -18,10 +18,11 @@ size_t lomuto_partition(int *array, ssize_t before, ssize_t after, size_t size)
 	{
 		if (array[j] <= pivot)
 		{
-		i++;
+
 		if (i != j)
 		{
 			swap(&array[i], &array[j]);
+		i++;
 		}
 		}
 	}
