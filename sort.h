@@ -30,6 +30,6 @@ void quick_sort(int *array, size_t size);
 void quick_sort_recursion(int *array, ssize_t before, ssize_t after, size_t size);
 size_t lomuto_partition(int *array, ssize_t before, ssize_t after, size_t size);
 void shell_sort(int *array, size_t size);
-size_t knuth_sequence(size_t size);
+size_t knuth_sequence_formula(size_t size);
 
 #endif /*SORT_H*/
