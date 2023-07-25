@@ -26,7 +26,7 @@ size_t lomuto_partition(int *array, ssize_t before, ssize_t after, size_t size)
 		}
 	}
 
-	if (i != after)
+	if (i + 1 != after)
 	{
 		swap(&array[i + 1], &array[after]);
 		print_array(array, size);
