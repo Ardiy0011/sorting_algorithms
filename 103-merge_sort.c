@@ -102,7 +102,6 @@ void merge_sort(int *array, size_t size)
 		merge_sort(left, lz);
 		merge_sort(right, rz);
 
-		// Check if the arrays are already sorted
 		if (left[lz - 1] <= right[0])
 		{
 			return;
