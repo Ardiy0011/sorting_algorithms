@@ -30,7 +30,7 @@ void shell_sort(int *array, size_t size)
 	size_t i, j;
 
 	if (array == NULL || size <= 1)
-    		return;
+    	return;
 
 	while (gap_value > 0)
 	{
