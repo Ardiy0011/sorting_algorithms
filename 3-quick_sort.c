@@ -4,17 +4,17 @@
 /**
  * lomuto_partition - Lomuto partition scheme for quicksort
  * @array: The input array
- * @be: The beforer bound index
- * @af: The afer bound index
+ * @before: The beforeer bound index
+ * @after: The afterer bound index
  * @size: Number of elements in @array
- * Return: Index of the pivot af partitioning
+ * Return: Index of the pivot after partitioning
  */
-size_t lomuto_seq(int *array, ssize_t be, ssize_t af, size_t size)
+size_t los(int *array, ssize_t before, ssize_t after, size_t size)
 {
-	int pivot = array[af];
-	ssize_t i = be - 1, j;
+	int pivot = array[after];
+	ssize_t i = before - 1, j;
 
-	for (j = be; j < af; j++)
+	for (j = before; j < after; j++)
 	{
 		if (array[j] <= pivot)
 		{
@@ -27,9 +27,9 @@ size_t lomuto_seq(int *array, ssize_t be, ssize_t af, size_t size)
 		}
 	}
 
-	if (i + 1 != af)
+	if (i + 1 != after)
 	{
-		swap(&array[i + 1], &array[af]);
+		swap(&array[i + 1], &array[after]);
 		print_array(array, size);
 	}
 
@@ -39,18 +39,18 @@ size_t lomuto_seq(int *array, ssize_t be, ssize_t af, size_t size)
 /**
  * quick_sort_recursion - Recursive recursion function for quicksort
  * @array: The input array
- * @be: The beforer bound index
- * @af: The after bound index
+ * @before: The beforeer bound index
+ * @after: The afterer bound index
  * @size: Number of elements in @array
  */
-void qs_recursion(int *array, ssize_t be, ssize_t af, size_t size)
+void qs(int *array, ssize_t before, ssize_t after, size_t size)
 {
-	if (be < af)
+	if (before < after)
 	{
-	size_t pivot_idx = lomuto_partition(array, be, af, size);
+	size_t pivot_idx = lomuto_partition(array, before, after, size);
 
-	quick_sort_recursion(array, be, pivot_idx - 1, size);
-	quick_sort_recursion(array, pivot_idx + 1, af, size);
+	quick_sort_recursion(array, before, pivot_idx - 1, size);
+	quick_sort_recursion(array, pivot_idx + 1, after, size);
 	}
 }
 
