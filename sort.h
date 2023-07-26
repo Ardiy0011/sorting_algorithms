@@ -33,5 +33,6 @@ void shell_sort(int *array, size_t size);
 size_t knuth_sequence_formula(size_t size);
 void merge_sort(int *array, size_t size);
 void merge(int *array, int *left, size_t lz, int *right, size_t rz);
+void insert(int *array, size_t size);
 
 #endif /*SORT_H*/
