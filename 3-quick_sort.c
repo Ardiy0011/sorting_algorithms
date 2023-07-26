@@ -2,7 +2,7 @@
 #include "swap.c"
 
 /**
- * lomuto_partition - Lomuto partition scheme for quicksort
+ * los - Lomuto partition scheme for quicksort
  * @array: The input array
  * @before: The beforeer bound index
  * @after: The afterer bound index
