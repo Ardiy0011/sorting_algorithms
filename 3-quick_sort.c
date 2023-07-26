@@ -37,7 +37,7 @@ size_t los(int *array, ssize_t before, ssize_t after, size_t size)
 }
 
 /**
- * quick_sort_recursion - Recursive recursion function for quicksort
+ * qs - Recursive recursion function for quicksort
  * @array: The input array
  * @before: The beforeer bound index
  * @after: The afterer bound index
@@ -47,10 +47,10 @@ void qs(int *array, ssize_t before, ssize_t after, size_t size)
 {
 	if (before < after)
 	{
-	size_t pivot_idx = lomuto_partition(array, before, after, size);
+	size_t pivot_idx = los(array, before, after, size);
 
-	quick_sort_recursion(array, before, pivot_idx - 1, size);
-	quick_sort_recursion(array, pivot_idx + 1, after, size);
+	qs(array, before, pivot_idx - 1, size);
+	qs(array, pivot_idx + 1, after, size);
 	}
 }
 
@@ -65,5 +65,5 @@ void quick_sort(int *array, size_t size)
 	if (array == NULL || size <= 1)
 	return;
 
-	quick_sort_recursion(array, 0, size - 1, size);
+	qs(array, 0, size - 1, size);
 }
