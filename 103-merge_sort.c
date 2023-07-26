@@ -63,7 +63,6 @@ void merge_sort(int *array, size_t size)
 	{
 	if (size <= 10)
 	{
-		insertion_sort(array, size);
 		print_array(array, size);
 		return;
 	}
