@@ -71,6 +71,11 @@ void merge_sort(int *array, size_t size)
 		merge_sort(left, lz);
 		merge_sort(right, rz);
 
+		if (left[lz - 1] <= right[0])
+		{
+			return;
+		}
+
 		merge(array, left, lz, right, rz);
 
 		print_array(array, size);
