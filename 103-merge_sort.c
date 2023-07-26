@@ -1,7 +1,7 @@
 #include "sort.h"
 
 /**
- * insertion_sort - Function that implements the insertion sort algorithm.
+ * insert - Function that implements the insertion sort algorithm.
  * @array: The input array.
  * @size: Number of elements in @array.
  */
@@ -40,10 +40,8 @@ void merge(int *array, int *left, size_t lz, int *right, size_t rz)
 
 	if (temp == NULL)
 	{
-		printf("Memory allocation error!\n");
 		return;
 	}
-
 	while (k < lz + rz)
 	{
 		switch ((i < lz) * 2 + (j < rz))
@@ -71,12 +69,10 @@ void merge(int *array, int *left, size_t lz, int *right, size_t rz)
 		}
 		k++;
 	}
-
 	for (i = 0; i < lz + rz; i++)
 	{
 		array[i] = temp[i];
 	}
-
 	free(temp);
 }
 
