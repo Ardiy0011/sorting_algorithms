@@ -1,32 +1,6 @@
 #include "sort.h"
 
 /**
- * insertion_sort - Function that implements the insertion sort algorithm.
- * @array: The input array.
- * @size: Number of elements in @array.
- */
-void insert(int *array, size_t size)
-{
-	size_t i, j;
-	int key;
-
-	for (i = 1; i < size; i++)
-	{
-		key = array[i];
-		j = i - 1;
-
-		while (j >= 0 && array[j] > key)
-		{
-			array[j + 1] = array[j];
-			j--;
-		}
-
-		array[j + 1] = key;
-	}
-}
-
-
-/**
  * merge - Merge two sorted subarrays into a single sorted array.
  * @array: The input array.
  * @left: Pointer to the left subarray.
@@ -79,7 +53,7 @@ void merge(int *array, int *left, size_t lz, int *right, size_t rz)
 }
 
 /**
- * merge_sort - Function that implements the merge sort algorithm
+ * merge_sort - Function that implements the top-down merge sort algorithm.
  * @array: The input array.
  * @size: Number of elements in @array.
  */
@@ -89,7 +63,7 @@ void merge_sort(int *array, size_t size)
 	{
 			if (size <= 10)
 		{
-			insert(array, size);
+			insertion_sort(array, size);
 			print_array(array, size);
 			return;
 		}
